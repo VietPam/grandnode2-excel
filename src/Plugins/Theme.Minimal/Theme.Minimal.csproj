@@ -2,6 +2,8 @@
     <Import Project="..\..\Build\Grand.Common.props" />
     <PropertyGroup>
         <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+        <EnableDefaultContentItems>false</EnableDefaultContentItems>
+        <RazorCompileOnBuild>false</RazorCompileOnBuild>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -39,6 +41,13 @@
             <ExcludeAssets>all</ExcludeAssets>
         </ProjectReference>
     </ItemGroup>
-
     
+
+    <ItemGroup>
+        <Content Include="Views/**/*.cshtml">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <!--<Compile Remove="Views/**/*.cshtml" />
+        <Content Remove="Views/**/*.cshtml" />-->
+    </ItemGroup>
 </Project>

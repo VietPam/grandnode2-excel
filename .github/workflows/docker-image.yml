@@ -1,11 +1,11 @@
 name: Docker Image CI
 
 env:
-  TAG: 'latest'
+  TAG: 'tmp-test1'
   
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "feature/tmp-test1" ]
   workflow_dispatch:
   
 jobs:

@@ -1,14 +1,14 @@
 name: Build and deploy .NET Core app to Linux WebApp grandnode
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "feature/tmp-test1" ]
   
 env:
   AZURE_WEBAPP_NAME: grandnode-dev
   AZURE_WEBAPP_PACKAGE_PATH: src/Web/Grand.Web/publish
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
   CONFIGURATION: Release
-  DOTNET_CORE_VERSION: 8.0.101
+  DOTNET_CORE_VERSION: 8.0.x
   WORKING_DIRECTORY: src/Web/Grand.Web  
 jobs:
   build-and-deploy:

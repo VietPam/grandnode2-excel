@@ -25,7 +25,11 @@ builder.Services.RegisterTasks();
 
 //build app
 var app = builder.Build();
-
+app.Use((context, next) =>
+{
+    context.Request.Scheme = "https";
+    return next(context);
+});
 //request pipeline
 StartupBase.ConfigureRequestPipeline(app, builder.Environment);
 
